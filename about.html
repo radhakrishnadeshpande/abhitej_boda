@@ -32,7 +32,7 @@
     .nav-link {
       font-family: Georgia, "Times New Roman", serif;
     }
-    .navbar-brand { font-weight: 600; font-size: 18px; position: relative; bottom: 2px; }
+    .navbar-brand { font-weight: 600; font-size: 18px; }
     .nav-link { margin-right: 20px; font-weight: 500; font-size: 14px; color: #000 !important; }
     .nav-link:hover { text-decoration: underline; }
     .social-icons a { color: #000; font-size: 16px; margin-left: 10px; transition: 0.3s; }
@@ -45,15 +45,9 @@
       line-height: 1.6;
       font-style: normal;
       font-weight: 400;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* split first and second paragraph */
     }
     .section-text h2 { font-size: 2.2rem; margin-bottom: 20px; font-weight: bold; }
-    .section-text .top-half p,
-    .section-text .bottom-half p { margin-bottom: 300px; } /* Increased spacing */
-    .section-text .top-half { margin-bottom: 20px; }
+    .section-text .top-half p { margin-bottom: 20px; }
     .section-text p strong { font-weight: bold; }
     .section-text p em { font-style: italic; }
 
@@ -87,11 +81,13 @@
       margin: 0;
     }
 
+    /* Mobile Responsive */
     @media (max-width: 768px) {
-      section { padding: 100px 20px; }
+      section { padding: 80px 20px; }
       .section-text h2 { font-size: 1.8rem; }
+      .section-text { text-align: center; }
       .row.align-items-center { flex-direction: column-reverse !important; }
-      .section-text { justify-content: flex-start; } /* stack paragraphs normally on mobile */
+      .section-img { margin-bottom: 20px; }
     }
   </style>
 </head>
@@ -100,18 +96,21 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
-      <div class="collapse navbar-collapse justify-content-start">
-        <ul class="navbar-nav">
+      <a class="navbar-brand" href="index.html">Abhitej Boda Creatives</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="landing_page.html">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="bookings.html">Bookings</a></li>
         </ul>
-      </div>
-      <a class="navbar-brand" href="index.html">Abhitej Boda Creatives</a>
-      <div class="social-icons ms-auto">
-        <a href="https://www.instagram.com/abhitejbodacreatives?igsh=bTU3Nm5sam05ZXhp"><i class="fab fa-instagram"></i></a>
-
-        <a href="https://in.pinterest.com/abhitejb/"><i class="fab fa-pinterest"></i></a>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/abhitejbodacreatives?igsh=bTU3Nm5sam05ZXhp"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.pinterest.com/abhitejb/"><i class="fab fa-pinterest"></i></a>
+        </div>
       </div>
     </div>
   </nav>

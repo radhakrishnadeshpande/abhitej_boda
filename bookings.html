@@ -20,7 +20,7 @@
       min-height: 100vh; 
     }
 
-    /* Navbar with white gradient */
+    /* Navbar */
     .navbar {
       padding: 15px 20px;
       background: linear-gradient(to bottom, #ffffff, rgba(255,255,255,0));
@@ -31,7 +31,7 @@
     .nav-link {
       font-family: Georgia, "Times New Roman", serif;
     }
-    .navbar-brand { font-weight: 600; font-size: 18px; position: relative; bottom: 2px; }
+    .navbar-brand { font-weight: 600; font-size: 18px; }
     .nav-link { margin-right: 20px; font-weight: 500; font-size: 14px; color: #000 !important; }
     .nav-link:hover { text-decoration: underline; }
     .social-icons a { color: #000; font-size: 16px; margin-left: 10px; transition: 0.3s; }
@@ -44,7 +44,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 120px 20px 40px; /* Top padding accounts for hidden navbar */
+      padding: 120px 20px 40px;
     }
     .content h2, .content h3 {
       font-family: Georgia, "Times New Roman", serif;
@@ -55,11 +55,8 @@
     .content p {
       font-size: 1.2rem;
       margin-bottom: 10px;
-      font-family: Georgia, "Times New Roman", serif;
     }
-    .content p strong {
-      font-weight: bold;
-    }
+    .content p strong { font-weight: bold; }
 
     hr { width: 50px; border-top: 3px solid #000; margin: 20px auto; }
 
@@ -90,11 +87,14 @@
       margin: 0;
     }
 
+    /* Mobile View */
     @media (max-width: 768px) {
       .navbar-brand { font-size: 16px; }
-      .nav-link { font-size: 12px; }
+      .nav-link { font-size: 13px; margin-right: 10px; }
+      .content { padding: 100px 20px 30px; }
       .content h2 { font-size: 2rem; }
-      .content h3 { font-size: 1.5rem; }
+      .content h3 { font-size: 1.4rem; }
+      .content p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -103,18 +103,22 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
-      <div class="collapse navbar-collapse justify-content-start">
-        <ul class="navbar-nav">
+      <a class="navbar-brand" href="index.html">Abhitej Boda Creatives</a>
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="landing_page.html">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </ul>
-      </div>
-      <a class="navbar-brand" href="index.html">Abhitej Boda Creatives</a>
-      <div class="social-icons ms-auto">
-        <a href="https://www.instagram.com/abhitejbodacreatives?igsh=bTU3Nm5sam05ZXhp"><i class="fab fa-instagram"></i></a>
-      
-        <a href="https://in.pinterest.com/abhitejb/"><i class="fab fa-pinterest"></i></a>
+        <div class="social-icons ms-auto">
+          <a href="https://www.instagram.com/abhitejbodacreatives?igsh=bTU3Nm5sam05ZXhp"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.pinterest.com/abhitejb/"><i class="fab fa-pinterest"></i></a>
+        </div>
       </div>
     </div>
   </nav>
@@ -149,10 +153,8 @@
     window.addEventListener('scroll', function() {
       let st = window.pageYOffset || document.documentElement.scrollTop;
       if (st > lastScrollTop){
-        // scrolling down
         navbar.style.top = '-80px';
       } else {
-        // scrolling up
         navbar.style.top = '0';
       }
       lastScrollTop = st <= 0 ? 0 : st;
